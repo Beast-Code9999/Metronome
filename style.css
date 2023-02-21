@@ -32,6 +32,16 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
+header {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 2rem;
+  font-size: 4rem; }
+
 /* start of footer */
 footer {
   width: 100%;
@@ -64,3 +74,5 @@ footer img:hover {
   transform: rotate(360deg) scale(1.5); }
 
 /* end of footer */
+body {
+  position: relative; }
