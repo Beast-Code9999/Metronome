@@ -39,7 +39,8 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  top: 2rem;
+  top: 0rem;
+  padding: 4rem;
   font-size: 4rem; }
 
 /* start of footer */
@@ -54,7 +55,9 @@ header {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 0rem; }
+  bottom: 0;
+  left: 0;
+  /* background-color: lightblue; */ }
 
 footer a {
   text-decoration: none;

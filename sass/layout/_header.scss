@@ -2,6 +2,7 @@ header {
     width: 100%;
     position: absolute;
     @include flex( row, center, center);
-    top: 2rem;
+    top: 0rem;
+    padding: 4rem;
     font-size: 4rem;
 }
