@@ -90,7 +90,8 @@ footer img:hover {
     background-color: lightblue;
     padding-bottom: 2rem;
     border: 2px solid #dbdde1;
-    border-radius: 1rem; }
+    border-radius: 1rem;
+    overflow: hidden; }
 
 .section {
   width: 100%;
@@ -99,7 +100,18 @@ footer img:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    border-bottom: 2px solid #dbdde1;
+    background-color: lightcoral; }
+
+.title {
+  font-size: 2rem; }
+
+.share__img {
+  width: 2rem; }
+
+.share:hover {
+  cursor: pointer; }
 
 body {
   width: 100%;

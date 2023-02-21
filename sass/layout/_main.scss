@@ -11,6 +11,7 @@
         padding-bottom: 2rem;
         border: 2px solid $color-gray;
         border-radius: 1rem;
+        overflow: hidden;
     }
 }
 
@@ -20,6 +21,8 @@
 
     &--top {
         @include flex( row, space-between, center );
+        border-bottom: 2px solid $color-gray;
+        background-color: lightcoral;
     }
 
     &--middle {
@@ -28,5 +31,20 @@
 
     &--bottom {
 
+    }
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.share {
+
+    &__img {
+        width: 2rem;
+    }
+
+    &:hover {
+        cursor: pointer;
     }
 }
