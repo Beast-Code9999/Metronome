@@ -54,7 +54,17 @@
 }
 
 .output {
+    width: 100%;
+    @include flex( Row, space-between, center);
 
+    &__bpm {
+        font-size: 3rem;
+        color: $color-gray;
+    }
+
+    &__play {
+
+    }
 }
 
 .input {
