@@ -1,15 +1,14 @@
 /* start of footer */
-footer {
+#footer {
     width: 100%;
     padding: 4rem;
     text-align: center;
     font-size: 2rem;
-    color: var(--color-text);
-    bottom: 0;
     font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex( row, center, center);
+    position: absolute;
+    bottom: 0rem
+    
     // background-color: hsl(0, 100%, 50%);
     /* background-color: lightblue; */
   }
