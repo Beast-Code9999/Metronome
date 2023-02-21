@@ -13,3 +13,20 @@
         border-radius: 1rem;
     }
 }
+
+.section {
+    width: 100%;
+    padding: 1.6rem;
+
+    &--top {
+        @include flex( row, space-between, center );
+    }
+
+    &--middle {
+
+    }
+
+    &--bottom {
+
+    }
+}
