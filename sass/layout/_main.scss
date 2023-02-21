@@ -1,0 +1,15 @@
+.main {
+    width: 100%;
+    height: auto;
+    @include flex( row, center, center );
+    
+
+    &__container {
+        width: 65rem;
+        height: 26rem;
+        background-color: lightblue;
+        padding-bottom: 2rem;
+        border: 2px solid $color-gray;
+        border-radius: 1rem;
+    }
+}
