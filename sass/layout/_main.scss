@@ -52,3 +52,20 @@
         cursor: pointer;
     }
 }
+
+.output {
+
+}
+
+.input {
+
+
+    &__range {
+        -webkit-appearance: none;
+        display: inline-block;
+        height: 48px;
+        margin: 0;
+        width: calc(100% - 96px);
+        background: transparent;
+    }
+}
