@@ -41,7 +41,8 @@ header {
   align-items: center;
   top: 0rem;
   padding: 4rem;
-  font-size: 4rem; }
+  font-size: 4rem;
+  font-family: 'Tilt Prism', cursive; }
 
 /* start of footer */
 #footer {
@@ -118,6 +119,18 @@ footer img:hover {
 
 .share:hover {
   cursor: pointer; }
+
+.output {
+  width: 100%;
+  display: flex;
+  flex-direction: Row;
+  justify-content: space-between;
+  align-items: center; }
+  .output__bpm {
+    font-size: 3rem;
+    color: #dbdde1; }
+    .output__bpm--small {
+      font-size: 1rem; }
 
 .input__range {
   -webkit-appearance: none;

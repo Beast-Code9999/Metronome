@@ -39,7 +39,7 @@
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 2rem; 
 }
 
 .share {
@@ -60,6 +60,10 @@
     &__bpm {
         font-size: 3rem;
         color: $color-gray;
+
+        &--small {
+            font-size: 1rem;
+        }
     }
 
     &__play {
