@@ -1,4 +1,4 @@
-const Metronome = (function Metronome {
+const Metronome = (function Metronome() {
 
     const init = function init() {
 
@@ -9,6 +9,7 @@ const Metronome = (function Metronome {
     }
 })();
 
+window.addEventListener('load', Metronome.init())
 
 // footer script
 function addDynamicFooterDate() {
