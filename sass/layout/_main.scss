@@ -81,7 +81,20 @@
 }
 
 .input {
+    @include flex( row, space-between, center);
 
+    &__minus {
+        width: 5rem;
+        height: 5rem;
+        position: relative;
+
+        & svg {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1000;
+        }
+    }
 
     &__range {
         -webkit-appearance: none;
@@ -90,5 +103,9 @@
         margin: 0;
         width: calc(100% - 96px);
         background: transparent;
+    }
+
+    &__plus {
+
     }
 }

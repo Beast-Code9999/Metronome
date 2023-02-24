@@ -147,13 +147,27 @@ footer img:hover {
   .output__play:hover {
     cursor: pointer; }
 
-.input__range {
-  -webkit-appearance: none;
-  display: inline-block;
-  height: 48px;
-  margin: 0;
-  width: calc(100% - 96px);
-  background: transparent; }
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .input__minus {
+    width: 5rem;
+    height: 5rem;
+    position: relative; }
+    .input__minus svg {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1000; }
+  .input__range {
+    -webkit-appearance: none;
+    display: inline-block;
+    height: 48px;
+    margin: 0;
+    width: calc(100% - 96px);
+    background: transparent; }
 
 body {
   width: 100%;
