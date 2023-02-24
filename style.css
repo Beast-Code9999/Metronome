@@ -144,6 +144,9 @@ footer img:hover {
       font-size: 1.4rem;
       color: #70757a;
       transform: translateX(-1rem); }
+  .output__play svg {
+    width: 4.8rem;
+    height: 4.8rem; }
   .output__play:hover {
     cursor: pointer; }
 

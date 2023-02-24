@@ -74,6 +74,11 @@
 
     &__play {
 
+        & svg {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+
         &:hover {
             cursor: pointer;
         }
