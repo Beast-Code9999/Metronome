@@ -11,6 +11,14 @@ html {
 body {
   box-sizing: border-box; }
 
+body {
+  font-family: arial,sans-serif; }
+
+*,
+*::before,
+*::after {
+  font-family: inherit; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -127,10 +135,15 @@ footer img:hover {
   justify-content: space-between;
   align-items: center; }
   .output__bpm {
-    font-size: 3rem;
-    color: #dbdde1; }
+    font-size: 4.8rem; }
+    .output__bpm--big {
+      display: inline-block;
+      color: #202124; }
     .output__bpm--small {
-      font-size: 1rem; }
+      display: inline-block;
+      font-size: 1.4rem;
+      color: #70757a;
+      transform: translateX(-1rem); }
 
 .input__range {
   -webkit-appearance: none;
