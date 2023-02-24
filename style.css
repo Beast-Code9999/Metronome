@@ -144,6 +144,8 @@ footer img:hover {
       font-size: 1.4rem;
       color: #70757a;
       transform: translateX(-1rem); }
+  .output__play:hover {
+    cursor: pointer; }
 
 .input__range {
   -webkit-appearance: none;

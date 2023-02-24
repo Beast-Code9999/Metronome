@@ -74,6 +74,9 @@
 
     &__play {
 
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
