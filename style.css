@@ -155,11 +155,11 @@ footer img:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  .input__minus {
-    width: 3rem;
-    height: 3rem;
+  .input__minus, .input__plus {
+    width: 3.5rem;
+    height: 3.5rem;
     position: relative; }
-    .input__minus svg {
+    .input__minus svg, .input__plus svg {
       height: 100%;
       width: 100%;
       position: absolute; }

@@ -88,9 +88,9 @@
 .input {
     @include flex( row, space-between, center);
 
-    &__minus {
-        width: 3rem;
-        height: 3rem;
+    &__minus, &__plus {
+        width: 3.5rem;
+        height: 3.5rem;
         position: relative;
 
         & svg {
@@ -107,9 +107,5 @@
         margin: 0;
         width: calc(100% - 96px);
         background: transparent;
-    }
-
-    &__plus {
-
     }
 }
