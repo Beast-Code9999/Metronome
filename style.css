@@ -96,8 +96,7 @@ footer img:hover {
   .main__container {
     width: 65rem;
     height: 26rem;
-    background-color: lightblue;
-    padding-bottom: 2rem;
+    background-color: none;
     border: 2px solid #dbdde1;
     border-radius: 1rem;
     overflow: hidden; }
@@ -111,13 +110,26 @@ footer img:hover {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #dbdde1;
-    background-color: lightcoral; }
+    background-color: none; }
   .section--middle {
     width: auto;
     position: relative;
     height: 13.6rem;
     padding: 0;
     margin: 1.6rem 1.6rem 0; }
+  .section--bottom {
+    height: 4.8rem;
+    border-top: 2px solid #dbdde1;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .section--bottom svg {
+      width: 3rem;
+      height: 3rem; }
+      .section--bottom svg:hover {
+        cursor: pointer; }
 
 .title {
   font-size: 2rem; }
