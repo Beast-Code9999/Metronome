@@ -10,6 +10,13 @@ const UIMetronome = (function UIMetronome() {
             currentTempo,
         }
     })();
+
+    const setTempo = (function setTempo() {
+
+        return {
+
+        }
+    })();
     
 
     const init = function init() {
