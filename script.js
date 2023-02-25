@@ -1,5 +1,7 @@
 const UIMetronome = (function UIMetronome() {
-    
+    function getElemById(id) {
+        return document.getElementById(id);
+	}
     
 
     const init = function init() {
@@ -13,6 +15,9 @@ const UIMetronome = (function UIMetronome() {
 
 
 const Metronome = (function Metronome() {
+    function getElemById(id) {
+        return document.getElementById(id);
+	}
 
     const init = function init() {
         UIMetronome.init();
