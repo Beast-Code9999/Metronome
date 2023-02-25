@@ -156,14 +156,13 @@ footer img:hover {
   justify-content: space-between;
   align-items: center; }
   .input__minus {
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height: 3rem;
     position: relative; }
     .input__minus svg {
       height: 100%;
       width: 100%;
-      position: absolute;
-      z-index: 1000; }
+      position: absolute; }
   .input__range {
     -webkit-appearance: none;
     display: inline-block;
