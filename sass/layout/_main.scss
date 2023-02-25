@@ -98,6 +98,10 @@
             width: 100%;
             position: absolute;
         }
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__range {
@@ -107,5 +111,9 @@
         margin: 0;
         width: calc(100% - 96px);
         background: transparent;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }

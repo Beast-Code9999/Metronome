@@ -163,6 +163,8 @@ footer img:hover {
       height: 100%;
       width: 100%;
       position: absolute; }
+    .input__minus:hover, .input__plus:hover {
+      cursor: pointer; }
   .input__range {
     -webkit-appearance: none;
     display: inline-block;
@@ -170,6 +172,8 @@ footer img:hover {
     margin: 0;
     width: calc(100% - 96px);
     background: transparent; }
+    .input__range:hover {
+      cursor: pointer; }
 
 body {
   width: 100%;
