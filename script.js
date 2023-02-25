@@ -1,7 +1,22 @@
-const Metronome = (function Metronome() {
+const UIMetronome = (function UIMetronome() {
+    
+    
 
     const init = function init() {
 
+    }
+
+    return {
+        init: init,
+    }
+})();
+
+
+const Metronome = (function Metronome() {
+
+    const init = function init() {
+        UIMetronome.init();
+        
     }
 
     return {
