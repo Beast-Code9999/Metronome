@@ -196,7 +196,7 @@ footer img:hover {
       -webkit-appearance: none;
       /* Override default look */
       appearance: none;
-      margin-top: -8px;
+      margin-top: -8.5px;
       /* Centers thumb on the track */
       background-color: #0898c4;
       border-radius: 50%; }
