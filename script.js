@@ -17,6 +17,10 @@ const UIMetronome = (function UIMetronome() {
 
         }
     })();
+
+    const inputRange = (function inputRange() {
+
+    })();
     
 
     const init = function init() {
