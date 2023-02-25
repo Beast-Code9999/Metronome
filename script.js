@@ -20,6 +20,9 @@ const UIMetronome = (function UIMetronome() {
 
     const inputRange = (function inputRange() {
 
+        return {
+
+        }
     })();
     
 
@@ -38,6 +41,13 @@ const Metronome = (function Metronome() {
     function getElemById(id) {
         return document.getElementById(id);
 	}
+
+    const changeInputColor = (function changeInputColor() {
+
+        return {
+            
+        }
+    })();
 
     const init = function init() {
         UIMetronome.init();
