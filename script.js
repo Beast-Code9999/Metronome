@@ -45,6 +45,13 @@ const Metronome = (function Metronome() {
     const changeInputColor = (function changeInputColor() {
 
         return {
+
+        }
+    })();
+
+    const output = (function output() {
+
+        return {
             
         }
     })();
