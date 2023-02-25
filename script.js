@@ -2,15 +2,24 @@ const UIMetronome = (function UIMetronome() {
     function getElemById(id) {
         return document.getElementById(id);
 	}
+
+    const Tempo =  (function Tempo() {
+        let currentTempo = 100;
+
+        return {
+            currentTempo,
+        }
+    })();
     
 
     const init = function init() {
 
-    }
+    };
 
     return {
         init: init,
-    }
+        Tempo: Tempo,
+    };
 })();
 
 
@@ -22,14 +31,14 @@ const Metronome = (function Metronome() {
     const init = function init() {
         UIMetronome.init();
         
-    }
+    };
 
     return {
         init: init,
-    }
+    };
 })();
 
-window.addEventListener('load', Metronome.init())
+window.addEventListener('load', Metronome.init());
 
 // footer script
 function addDynamicFooterDate() {
