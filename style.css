@@ -184,6 +184,12 @@ footer img:hover {
     margin: 0;
     width: calc(100% - 96px);
     background: transparent; }
+    .input__range::-webkit-slider-runnable-track {
+      background: #dddddd;
+      height: .3rem; }
+    .input__range::-moz-range-track {
+      background: #dddddd;
+      height: .3rem; }
     .input__range:hover {
       cursor: pointer; }
 

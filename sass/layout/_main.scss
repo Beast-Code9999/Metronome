@@ -124,8 +124,22 @@
         width: calc(100% - 96px);
         background: transparent;
 
+        &::-webkit-slider-runnable-track { // for Chrome, Safari, Opera, and Edge Chromium
+            background: $color-track;
+            height: .3rem;
+            // center the thumb on the track 
+            // margin-top = (track height in pixels / 2) - (thumb height in pixels /2)
+        }
+
+        &::-moz-range-track { // for Firefox
+            background: $color-track;
+            height: .3rem;  
+        }
+
         &:hover {
             cursor: pointer;
         }
     }
 }
+
+
