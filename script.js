@@ -27,18 +27,20 @@ const UIMetronome = (function UIMetronome() {
         const _sliderUpdate = function _sliderUpdate() {
             range.addEventListener('input', () => {
                 setTempo.updateTempo(range.value);
-                console.log(Tempo.currentTempo);
+                // console.log(Tempo.currentTempo);
             })
         };
-
         const _plusUpdate = function _plusUpdate() {
             const plusDiv = getElemById('input__plus');
             plusDiv.addEventListener('click', () => {
-                Tempo.currentTempo++;
-                console.log(Tempo.currentTempo)
+                range.value++
+                setTempo.updateTempo(range.value);
+                // console.log(Tempo.currentTempo)
             })
         };
-
+        const _minusUpdate = function _minusUpdate() {
+            
+        }
         const updateRange = function updateRange() {
             _sliderUpdate();
             _plusUpdate();
