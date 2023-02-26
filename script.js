@@ -27,7 +27,7 @@ const UIMetronome = (function UIMetronome() {
         const _sliderUpdate = function _sliderUpdate() {
             range.addEventListener('input', () => {
                 setTempo.updateTempo(range.value);
-                console.log(Tempo.currentTempo);
+                // console.log(Tempo.currentTempo);
             })
         };
         const _plusUpdate = function _plusUpdate() {
@@ -35,7 +35,7 @@ const UIMetronome = (function UIMetronome() {
             plusDiv.addEventListener('click', () => {
                 range.value++;
                 setTempo.updateTempo(range.value);
-                console.log(Tempo.currentTempo);
+                // console.log(Tempo.currentTempo);
             })
         };
         const _minusUpdate = function _minusUpdate() {
@@ -43,7 +43,7 @@ const UIMetronome = (function UIMetronome() {
             minusDiv.addEventListener('click', () => {
                 range.value--;
                 setTempo.updateTempo(range.value);
-                console.log(Tempo.currentTempo);
+                // console.log(Tempo.currentTempo);
             })
         }
         const updateRange = function updateRange() {
@@ -90,22 +90,24 @@ const Metronome = (function Metronome() {
             elem.addEventListener(event, () => {
                 console.log(outputBpm);
             })
-        }
+        };
 
         const updateOutput = function updateOutput() {
             _setEventListener(range, 'input');
-        }
+        };
 
-
-        
-        return {
+        const init = function init() {
             updateOutput();
-        }
+        };
+
+        return {
+            init,
+        };
     })();
 
     const init = function init() {
         UIMetronome.init();
-        
+        output.init();
     };
 
     return {
