@@ -31,7 +31,9 @@ const UIMetronome = (function UIMetronome() {
             })
         }
 
-        
+        const _plusUpdate = function _plusUpdate() {
+            
+        }
 
         const updateRange = function updateRange() {
             _sliderUpdate()
