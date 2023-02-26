@@ -22,15 +22,29 @@ const UIMetronome = (function UIMetronome() {
     })();
 
     const inputRange = (function inputRange() {
+        const range = getElemById('input__range');
+
+        const _sliderUpdate = function _sliderUpdate() {
+            range.addEventListener('input', () => {
+                setTempo.updateTempo(range.value);
+                console.log(Tempo.currentTempo)
+            })
+        }
+
+        
+
+        const updateRange = function updateRange() {
+            _sliderUpdate()
+        }
 
         return {
-
+            updateRange
         }
     })();
     
 
     const init = function init() {
-
+        inputRange.updateRange();
     };
 
     return {
