@@ -27,27 +27,33 @@ const UIMetronome = (function UIMetronome() {
         const _sliderUpdate = function _sliderUpdate() {
             range.addEventListener('input', () => {
                 setTempo.updateTempo(range.value);
-                // console.log(Tempo.currentTempo);
+                console.log(Tempo.currentTempo);
             })
         };
         const _plusUpdate = function _plusUpdate() {
             const plusDiv = getElemById('input__plus');
             plusDiv.addEventListener('click', () => {
-                range.value++
+                range.value++;
                 setTempo.updateTempo(range.value);
-                // console.log(Tempo.currentTempo)
+                console.log(Tempo.currentTempo);
             })
         };
         const _minusUpdate = function _minusUpdate() {
-            
+            const minusDiv = getElemById('input__minus');
+            minusDiv.addEventListener('click', () => {
+                range.value--;
+                setTempo.updateTempo(range.value);
+                console.log(Tempo.currentTempo);
+            })
         }
         const updateRange = function updateRange() {
             _sliderUpdate();
             _plusUpdate();
+            _minusUpdate();
         };
 
         return {
-            updateRange
+            updateRange,
         };
     })();
     
