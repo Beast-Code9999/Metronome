@@ -12,9 +12,12 @@ const UIMetronome = (function UIMetronome() {
     })();
 
     const setTempo = (function setTempo() {
+        const updateTempo = function updateTempo(tempo) {
+            Tempo.currentTempo = tempo;
+        }
 
         return {
-
+            updateTempo,
         }
     })();
 
