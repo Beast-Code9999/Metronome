@@ -82,9 +82,24 @@ const Metronome = (function Metronome() {
     })();
 
     const output = (function output() {
+        const outputBpm = getElemById('output__bpm--big');
+        const range = getElemById('input__range');
 
+
+        const _setEventListener = function _setEventListener(elem, event) {
+            elem.addEventListener(event, () => {
+                console.log(outputBpm);
+            })
+        }
+
+        const updateOutput = function updateOutput() {
+            _setEventListener(range, 'input');
+        }
+
+
+        
         return {
-            
+            updateOutput();
         }
     })();
 
