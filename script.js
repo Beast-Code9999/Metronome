@@ -8,17 +8,17 @@ const UIMetronome = (function UIMetronome() {
 
         return {
             currentTempo,
-        }
+        };
     })();
 
     const setTempo = (function setTempo() {
         const updateTempo = function updateTempo(tempo) {
             Tempo.currentTempo = tempo;
-        }
+        };
 
         return {
             updateTempo,
-        }
+        };
     })();
 
     const inputRange = (function inputRange() {
@@ -27,21 +27,26 @@ const UIMetronome = (function UIMetronome() {
         const _sliderUpdate = function _sliderUpdate() {
             range.addEventListener('input', () => {
                 setTempo.updateTempo(range.value);
-                console.log(Tempo.currentTempo)
+                console.log(Tempo.currentTempo);
             })
-        }
+        };
 
         const _plusUpdate = function _plusUpdate() {
-            
-        }
+            const plusDiv = getElemById('input__plus');
+            plusDiv.addEventListener('click', () => {
+                Tempo.currentTempo++;
+                console.log(Tempo.currentTempo)
+            })
+        };
 
         const updateRange = function updateRange() {
-            _sliderUpdate()
-        }
+            _sliderUpdate();
+            _plusUpdate();
+        };
 
         return {
             updateRange
-        }
+        };
     })();
     
 
