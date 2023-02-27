@@ -85,10 +85,10 @@ const Metronome = (function Metronome() {
         const outputBpm = getElemById('output__bpm--big');
         const range = getElemById('input__range');
 
-
         const _setEventListener = function _setEventListener(elem, event) {
             elem.addEventListener(event, () => {
-                console.log(outputBpm);
+                // console.log(UIMetronome.Tempo.currentTempo)
+                outputBpm.textContent = UIMetronome.Tempo.currentTempo;
             })
         };
 
