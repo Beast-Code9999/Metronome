@@ -84,6 +84,8 @@ const Metronome = (function Metronome() {
     const output = (function output() {
         const outputBpm = getElemById('output__bpm--big');
         const range = getElemById('input__range');
+        const plusDiv = getElemById('input__plus');
+        const minusDiv = getElemById('input__minus');
 
         const _setEventListener = function _setEventListener(elem, event) {
             elem.addEventListener(event, () => {
@@ -94,6 +96,8 @@ const Metronome = (function Metronome() {
 
         const updateOutput = function updateOutput() {
             _setEventListener(range, 'input');
+            _setEventListener(plusDiv, 'click');
+            _setEventListener(minusDiv, 'click');
         };
 
         const init = function init() {
