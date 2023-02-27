@@ -3,7 +3,7 @@ const UIMetronome = (function UIMetronome() {
         return document.getElementById(id);
 	}
 
-    const Tempo =  (function Tempo() {
+    const Tempo =  (function Tempo() { // Stores current tempo. Accessible globally
         let currentTempo = 100;
 
         return {
@@ -11,7 +11,7 @@ const UIMetronome = (function UIMetronome() {
         };
     })();
 
-    const setTempo = (function setTempo() {
+    const setTempo = (function setTempo() { // sets stored tempo to range.value
         const updateTempo = function updateTempo(tempo) {
             Tempo.currentTempo = tempo;
         };
@@ -21,7 +21,7 @@ const UIMetronome = (function UIMetronome() {
         };
     })();
 
-    const inputRange = (function inputRange() {
+    const inputRange = (function inputRange() { // sets tempo based on input range.value
         const range = getElemById('input__range');
 
         const _sliderUpdate = function _sliderUpdate() {
@@ -74,7 +74,8 @@ const Metronome = (function Metronome() {
         return document.getElementById(id);
 	}
 
-    const changeInputColor = (function changeInputColor() {
+    const changeInputColor = (function changeInputColor() { // changes input color based on range value
+
 
         const init = function init() {
 
@@ -111,9 +112,21 @@ const Metronome = (function Metronome() {
         };
     })();
 
+    const setBeatSound = (function setBeatSound() {
+
+        const init = function init() {
+
+        };
+
+        return {
+            init,
+        };
+    })();
+
     const init = function init() {
         UIMetronome.init();
         output.init();
+        setBeatSound.init()
     };
 
     return {
