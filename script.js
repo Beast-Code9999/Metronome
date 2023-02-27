@@ -113,9 +113,14 @@ const Metronome = (function Metronome() {
     })();
 
     const setBeatSound = (function setBeatSound() {
+        
+        const _playSound = function _playSound() {
+            const playDiv = getElemById('output__play');
+            console.log(playDiv)
+        }
 
         const init = function init() {
-
+            _playSound();
         };
 
         return {
