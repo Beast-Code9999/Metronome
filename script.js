@@ -76,9 +76,13 @@ const Metronome = (function Metronome() {
 
     const changeInputColor = (function changeInputColor() {
 
-        return {
+        const init = function init() {
 
-        }
+        };
+
+        return {
+            init,
+        };
     })();
 
     const output = (function output() {
@@ -93,13 +97,11 @@ const Metronome = (function Metronome() {
                 outputBpm.textContent = UIMetronome.Tempo.currentTempo;
             })
         };
-
         const updateOutput = function updateOutput() {
             _setEventListener(range, 'input');
             _setEventListener(plusDiv, 'click');
             _setEventListener(minusDiv, 'click');
         };
-
         const init = function init() {
             updateOutput();
         };
