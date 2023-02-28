@@ -116,7 +116,10 @@ const Metronome = (function Metronome() {
         
         const _playSound = function _playSound() {
             const playDiv = getElemById('output__play');
-            console.log(playDiv)
+            playDiv.addEventListener('click', ()=> {
+                let audio = getElemById('audio');
+                audio.play()
+            })
         }
 
         const init = function init() {
