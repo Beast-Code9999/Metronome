@@ -113,12 +113,12 @@ const Metronome = (function Metronome() {
     })();
 
     const setBeatSound = (function setBeatSound() {
+        let soundPlaying = false;
         // The maths:
         // UIMetronome.Tempo.currentTepo / 60s        how many beats per per minute
         // Ans / 1000ms                               how many beats per second
         // 1 / Ans                                    1 beat per x miliseconds
 
-        
         const _playSound = function _playSound() {
             const playDiv = getElemById('output__play');
             playDiv.addEventListener('click', ()=> {
@@ -132,12 +132,13 @@ const Metronome = (function Metronome() {
                     if(!audio) return
                     audio.currentTime = 0;
                     audio.play();
-                    cycle++;
 
-                    if( cycle > 30 ) complete();
+                    if( soundPlaying === false ) complete();
                 }
 
-                let cycle = 1;
+                function soundOnOff() {
+                    
+                }
 
                 let timer = setInterval(sound, 100);
 
