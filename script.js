@@ -126,18 +126,22 @@ const Metronome = (function Metronome() {
                 // if(!audio) return
                 // audio.currentTime = 0;
                 // audio.play();
+                soundPlaying = true;
 
                 function sound() {
                     let audio = getElemById('audio');
                     if(!audio) return
                     audio.currentTime = 0;
                     audio.play();
+                    soundOnOff();
 
                     if( soundPlaying === false ) complete();
                 }
 
                 function soundOnOff() {
-                    
+                    playDiv.addEventListener('click', ()=> {
+                        soundPlaying = false;
+                    })
                 }
 
                 let timer = setInterval(sound, 100);
