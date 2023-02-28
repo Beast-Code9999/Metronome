@@ -117,14 +117,34 @@ const Metronome = (function Metronome() {
         // UIMetronome.Tempo.currentTepo / 60s        how many beats per per minute
         // Ans / 1000ms                               how many beats per second
         // 1 / Ans                                    1 beat per x miliseconds
+
         
         const _playSound = function _playSound() {
             const playDiv = getElemById('output__play');
             playDiv.addEventListener('click', ()=> {
-                let audio = getElemById('audio');
-                if(!audio) return
-                audio.currentTime = 0;
-                audio.play();
+                // let audio = getElemById('audio');
+                // if(!audio) return
+                // audio.currentTime = 0;
+                // audio.play();
+
+                function sound() {
+                    let audio = getElemById('audio');
+                    if(!audio) return
+                    audio.currentTime = 0;
+                    audio.play();
+                    cycle++;
+
+                    if( cycle > 30 ) complete();
+                }
+
+                let cycle = 1;
+
+                let timer = setInterval(sound, 100);
+
+                function complete() {
+                    clearInterval(timer);
+                    timer = null;
+                }
 
             })
         }
