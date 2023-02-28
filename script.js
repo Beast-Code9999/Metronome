@@ -119,6 +119,10 @@ const Metronome = (function Metronome() {
         // Ans / 1000ms                               how many beats per second
         // 1 / Ans                                    1 beat per x miliseconds
 
+        let bpm = UIMetronome.Tempo.currentTempo / 60;
+        let bpms = bpm / 1000;
+        let duration = 1 / bpms;
+
         const _playSound = function _playSound() {
             const playDiv = getElemById('output__play');
             playDiv.addEventListener('click', ()=> {
