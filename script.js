@@ -2,6 +2,9 @@ const UIMetronome = (function UIMetronome() {
     function getElemById(id) {
         return document.getElementById(id);
 	}
+    const _setEventListener = function setEventListener( elem, event, callback ) {
+        elem.addEventListener( event, callback );
+    };
 
     const Tempo =  (function Tempo() { // Stores current tempo. Accessible globally
         let currentTempo = 100;
@@ -53,24 +56,56 @@ const UIMetronome = (function UIMetronome() {
             })
         }
 
-        const updateRange = function updateRange() {
+        const init = function init() {
             _sliderUpdate();
             _plusUpdate();
             _minusUpdate();
         };
 
         return {
-            updateRange,
+            init,
         };
     })();
 
     const setBpm = (function setBpm() {
-    
+        // The maths:
+        // UIMetronome.Tempo.currentTepo / 60s        how many beats per per minute
+        // Ans / 1000ms                               how many beats per second
+        // 1 / Ans                                    1 beat per x miliseconds
+        const range = getElemById('input__range');
+        const plusDiv = getElemById('input__plus');
+        const minusDiv = getElemById('input__minus');
+        const playDiv = getElemById('output__play');
+
+        function _setDurationOfTempo() {
+            Tempo.bpm = Tempo.currentTempo / 60;
+            Tempo.bpms = Tempo.bpm / 1000;
+            Tempo.duration = 1 / Tempo.bpms;
+
+            console.log(Tempo.currentTempo )
+            console.log(Tempo.bpm)
+            console.log(Tempo.bpms)
+            console.log(Tempo.duration)
+        }
+        
+        _setEventListener(range, 'input', _setDurationOfTempo );
+        _setEventListener(plusDiv, 'click', _setDurationOfTempo );
+        _setEventListener(minusDiv, 'click', _setDurationOfTempo );
+        _setEventListener(playDiv, 'click', _setDurationOfTempo );
+
+        const init = function init() {
+            _setDurationOfTempo()
+        };
+
+        return {
+            init,
+        };
     })();
     
 
     const init = function init() {
-        inputRange.updateRange();
+        inputRange.init();
+        setBpm.init();
     };
 
     return {
@@ -94,6 +129,7 @@ const Metronome = (function Metronome() {
     const plusDiv = getElemById('input__plus');
     const minusDiv = getElemById('input__minus');
     const playDiv = getElemById('output__play');
+
     let soundPlaying = false;
 
 
@@ -129,31 +165,6 @@ const Metronome = (function Metronome() {
     })();
 
     const setBeatSound = (function setBeatSound() {
-        // The maths:
-        // UIMetronome.Tempo.currentTepo / 60s        how many beats per per minute
-        // Ans / 1000ms                               how many beats per second
-        // 1 / Ans                                    1 beat per x miliseconds
-        let bpm;
-        let bpms;
-        let duration;
-
-        function _setDurationOfTempo() {
-            bpm = UIMetronome.Tempo.currentTempo / 60;
-            bpms = bpm / 1000;
-            duration = 1 / bpms;
-
-            console.log(UIMetronome.Tempo.currentTempo )
-            console.log(bpm)
-            console.log(bpms)
-            console.log(duration)
-        }
-        
-        _setEventListener(range, 'input', _setDurationOfTempo );
-        _setEventListener(plusDiv, 'click', _setDurationOfTempo );
-        _setEventListener(minusDiv, 'click', _setDurationOfTempo );
-        _setEventListener(playDiv, 'click', _setDurationOfTempo );
-
-
 
         // const _playSound = function _playSound() {
         //     const playDiv = getElemById('output__play');
