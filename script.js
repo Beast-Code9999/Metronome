@@ -35,10 +35,6 @@ const UIMetronome = (function UIMetronome() {
         // UIMetronome.Tempo.currentTepo / 60s        how many beats per per minute
         // Ans / 1000ms                               how many beats per second
         // 1 / Ans                                    1 beat per x miliseconds
-        // const range = getElemById('input__range');
-        // const plusDiv = getElemById('input__plus');
-        // const minusDiv = getElemById('input__minus');
-        // const playDiv = getElemById('output__play');
 
         Tempo.bpm = Tempo.currentTempo / 60;
         Tempo.bpms = Tempo.bpm / 1000;
@@ -48,11 +44,6 @@ const UIMetronome = (function UIMetronome() {
         console.log(Tempo.bpm)
         console.log(Tempo.bpms)
         console.log(Tempo.duration)
-
-        // _setEventListener(range, 'input', _setDurationOfTempo );
-        // _setEventListener(plusDiv, 'click', _setDurationOfTempo );
-        // _setEventListener(minusDiv, 'click', _setDurationOfTempo );
-        // _setEventListener(playDiv, 'click', _setDurationOfTempo );
     }
 
     const inputRange = (function inputRange() { // sets tempo based on input range.value
@@ -124,20 +115,19 @@ const Metronome = (function Metronome() {
 
     let soundPlaying = false;
 
+    // const changeInputColor = (function changeInputColor() { // changes input color based on range value
 
-    const changeInputColor = (function changeInputColor() { // changes input color based on range value
 
+    //     const init = function init() {
 
-        const init = function init() {
+    //     };
 
-        };
+    //     return {
+    //         init,
+    //     };
+    // })();
 
-        return {
-            init,
-        };
-    })();
-
-    const output = (function output() { 
+    const output = (function output() { // change textContent of .output__bpm--big
         function _changeOutputText() {
             outputBpm.textContent = UIMetronome.Tempo.currentTempo;
         }
@@ -157,6 +147,13 @@ const Metronome = (function Metronome() {
     })();
 
     const setBeatSound = (function setBeatSound() {
+        const _playSound = function _playSound() {
+
+            let audio = getElemById('audio');
+            // console.log(audio);
+            audio.currentTime = 0; // allows audio to repeat without finishing
+            // audio.play()
+        }
 
         // const _playSound = function _playSound() {
         //     const playDiv = getElemById('output__play');
@@ -202,7 +199,7 @@ const Metronome = (function Metronome() {
         // }
 
         const init = function init() {
-            // _playSound();
+            _playSound();
         };
 
         return {
