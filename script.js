@@ -46,6 +46,7 @@ const UIMetronome = (function UIMetronome() {
                 // console.log(Tempo.currentTempo);
             })
         }
+
         const updateRange = function updateRange() {
             _sliderUpdate();
             _plusUpdate();
@@ -55,6 +56,10 @@ const UIMetronome = (function UIMetronome() {
         return {
             updateRange,
         };
+    })();
+
+    const setBpm = (function setBpm() {
+    
     })();
     
 
