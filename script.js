@@ -75,7 +75,9 @@ const Metronome = (function Metronome() {
         return document.getElementById(id);
 	}
 
-
+    const setEventListener = function setEventListener( elem, event, callback ) {
+        elem.addEventListener( event, callback );
+    }   
 
 
     const changeInputColor = (function changeInputColor() { // changes input color based on range value
@@ -96,7 +98,9 @@ const Metronome = (function Metronome() {
         const plusDiv = getElemById('input__plus');
         const minusDiv = getElemById('input__minus');
 
-        const _setEventListener = function _setEventListener(elem, event) {
+        
+
+        const _setEventListener = function _setEventListener(elem, event, func) {
             elem.addEventListener(event, () => {
                 // console.log(UIMetronome.Tempo.currentTempo)
                 outputBpm.textContent = UIMetronome.Tempo.currentTempo;
@@ -122,8 +126,10 @@ const Metronome = (function Metronome() {
         // UIMetronome.Tempo.currentTepo / 60s        how many beats per per minute
         // Ans / 1000ms                               how many beats per second
         // 1 / Ans                                    1 beat per x miliseconds
-        const _setDurationOfTempo = _setDurationOfTempo() {
-            
+        const _setDurationOfTempo = function _setDurationOfTempo() {
+            let bpm = Number(UIMetronome.Tempo.currentTempo) / 60;
+            let bpms = bpm / 1000;
+            let duration = 1 / bpms;
         }
 
 
