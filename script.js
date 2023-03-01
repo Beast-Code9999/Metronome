@@ -5,9 +5,15 @@ const UIMetronome = (function UIMetronome() {
 
     const Tempo =  (function Tempo() { // Stores current tempo. Accessible globally
         let currentTempo = 100;
+        let bpm;
+        let bpms;
+        let duration;
 
         return {
             currentTempo,
+            bpm,
+            bpms,
+            duration,
         };
     })();
 
