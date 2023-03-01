@@ -74,10 +74,17 @@ const Metronome = (function Metronome() {
     function getElemById(id) {
         return document.getElementById(id);
 	}
-
     const _setEventListener = function setEventListener( elem, event, callback ) {
         elem.addEventListener( event, callback );
-    }   
+    };
+
+    const outputBpm = getElemById('output__bpm--big');
+    const range = getElemById('input__range');
+    const plusDiv = getElemById('input__plus');
+    const minusDiv = getElemById('input__minus');
+    const playDiv = getElemById('output__play');
+    let soundPlaying = false;
+
 
     const changeInputColor = (function changeInputColor() { // changes input color based on range value
 
@@ -91,20 +98,15 @@ const Metronome = (function Metronome() {
         };
     })();
 
-    const output = (function output() {
-        const outputBpm = getElemById('output__bpm--big');
-        const range = getElemById('input__range');
-        const plusDiv = getElemById('input__plus');
-        const minusDiv = getElemById('input__minus');
-
-        function changeOutputText() {
+    const output = (function output() { 
+        function _changeOutputText() {
             outputBpm.textContent = UIMetronome.Tempo.currentTempo;
         }
 
         const updateOutput = function updateOutput() {
-            _setEventListener(range, 'input', changeOutputText);
-            _setEventListener(plusDiv, 'click', changeOutputText);
-            _setEventListener(minusDiv, 'click', changeOutputText);
+            _setEventListener(range, 'input', _changeOutputText);
+            _setEventListener(plusDiv, 'click', _changeOutputText);
+            _setEventListener(minusDiv, 'click', _changeOutputText);
         };
         const init = function init() {
             updateOutput();
@@ -116,61 +118,77 @@ const Metronome = (function Metronome() {
     })();
 
     const setBeatSound = (function setBeatSound() {
-        let soundPlaying = false;
         // The maths:
         // UIMetronome.Tempo.currentTepo / 60s        how many beats per per minute
         // Ans / 1000ms                               how many beats per second
         // 1 / Ans                                    1 beat per x miliseconds
-        const _setDurationOfTempo = function _setDurationOfTempo() {
-            let bpm = Number(UIMetronome.Tempo.currentTempo) / 60;
-            let bpms = bpm / 1000;
-            let duration = 1 / bpms;
+        let bpm;
+        let bpms;
+        let duration;
+
+        function _setDurationOfTempo() {
+            bpm = UIMetronome.Tempo.currentTempo / 60;
+            bpms = bpm / 1000;
+            duration = 1 / bpms;
+
+            console.log(UIMetronome.Tempo.currentTempo )
+            console.log(bpm)
+            console.log(bpms)
+            console.log(duration)
         }
+        
+        _setEventListener(range, 'input', _setDurationOfTempo );
+        _setEventListener(plusDiv, 'click', _setDurationOfTempo );
+        _setEventListener(minusDiv, 'click', _setDurationOfTempo );
+        _setEventListener(playDiv, 'click', _setDurationOfTempo );
 
 
-        const _playSound = function _playSound() {
-            const playDiv = getElemById('output__play');
-            playDiv.addEventListener('click', ()=> {
-                // let audio = getElemById('audio');
-                // if(!audio) return
-                // audio.currentTime = 0;
-                // audio.play();
-                soundPlaying = true;
 
-                function sound() {
-                    let audio = getElemById('audio');
-                    if(!audio) return
-                    audio.currentTime = 0;
-                    audio.play();
-                    soundOnOff();
+        // const _playSound = function _playSound() {
+        //     const playDiv = getElemById('output__play');
+        //     playDiv.addEventListener('click', ()=> {
+        //         // let audio = getElemById('audio');
+        //         // if(!audio) return
+        //         // audio.currentTime = 0;
+        //         // audio.play();
+        //         soundPlaying = true;
+        //         a();
+        //         _setEventListener(range, 'input', a );
+        //         _setEventListener(plusDiv, 'click', a );
+        //         _setEventListener(minusDiv, 'click', a );
 
-                    console.log(UIMetronome.Tempo.currentTempo)
-                    
-                    console.log(bpm)
+        //         function a() {
+        //             let timer = setInterval(sound, duration);
+        //             complete();
+        //             timer = setInterval(sound, duration);
 
-                    console.log(duration)
-
-                    if( soundPlaying === false ) complete();
-                }
-
-                function soundOnOff() {
-                    playDiv.addEventListener('click', ()=> {
-                        soundPlaying = false;
-                    })
-                }
-
-                let timer = setInterval(sound, duration);
-
-                function complete() {
-                    clearInterval(timer);
-                    timer = null;
-                }
-
-            })
-        }
+        //             function sound() {
+        //                 let audio = getElemById('audio');
+        //                 if(!audio) return
+        //                 audio.currentTime = 0;
+        //                 audio.play();
+        //                 soundOnOff();
+    
+        //                 if( soundPlaying === false ) complete();
+        //             }
+    
+        //             function soundOnOff() {
+        //                 playDiv.addEventListener('click', ()=> {
+        //                     soundPlaying = false;
+        //                 })
+        //             }
+    
+    
+        //             function complete() {
+        //                 clearInterval(timer);
+        //                 timer = null;
+        //             }
+        //         }
+        //     })
+        // }
 
         const init = function init() {
-            _playSound();
+            // _playSound();
         };
 
         return {
