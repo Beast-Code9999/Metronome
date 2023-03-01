@@ -75,10 +75,9 @@ const Metronome = (function Metronome() {
         return document.getElementById(id);
 	}
 
-    const setEventListener = function setEventListener( elem, event, callback ) {
+    const _setEventListener = function setEventListener( elem, event, callback ) {
         elem.addEventListener( event, callback );
     }   
-
 
     const changeInputColor = (function changeInputColor() { // changes input color based on range value
 
@@ -98,18 +97,14 @@ const Metronome = (function Metronome() {
         const plusDiv = getElemById('input__plus');
         const minusDiv = getElemById('input__minus');
 
-        
+        function changeOutputText() {
+            outputBpm.textContent = UIMetronome.Tempo.currentTempo;
+        }
 
-        const _setEventListener = function _setEventListener(elem, event, func) {
-            elem.addEventListener(event, () => {
-                // console.log(UIMetronome.Tempo.currentTempo)
-                outputBpm.textContent = UIMetronome.Tempo.currentTempo;
-            })
-        };
         const updateOutput = function updateOutput() {
-            _setEventListener(range, 'input');
-            _setEventListener(plusDiv, 'click');
-            _setEventListener(minusDiv, 'click');
+            _setEventListener(range, 'input', changeOutputText);
+            _setEventListener(plusDiv, 'click', changeOutputText);
+            _setEventListener(minusDiv, 'click', changeOutputText);
         };
         const init = function init() {
             updateOutput();
