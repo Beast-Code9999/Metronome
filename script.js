@@ -76,9 +76,7 @@ const Metronome = (function Metronome() {
 	}
 
 
-    let bpm = Number(UIMetronome.Tempo.currentTempo) / 60;
-    let bpms = bpm / 1000;
-    let duration = 1 / bpms;
+
 
     const changeInputColor = (function changeInputColor() { // changes input color based on range value
 
@@ -124,6 +122,9 @@ const Metronome = (function Metronome() {
         // UIMetronome.Tempo.currentTepo / 60s        how many beats per per minute
         // Ans / 1000ms                               how many beats per second
         // 1 / Ans                                    1 beat per x miliseconds
+        const _setDurationOfTempo = _setDurationOfTempo() {
+            
+        }
 
 
         const _playSound = function _playSound() {
