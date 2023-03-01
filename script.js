@@ -13,7 +13,7 @@ const UIMetronome = (function UIMetronome() {
 
     const setTempo = (function setTempo() { // sets stored tempo to range.value
         const updateTempo = function updateTempo(tempo) {
-            Tempo.currentTempo = tempo;
+            Tempo.currentTempo = +tempo;
         };
 
         return {
@@ -69,10 +69,16 @@ const UIMetronome = (function UIMetronome() {
 })();
 
 
+
 const Metronome = (function Metronome() {
     function getElemById(id) {
         return document.getElementById(id);
 	}
+
+
+    let bpm = Number(UIMetronome.Tempo.currentTempo) / 60;
+    let bpms = bpm / 1000;
+    let duration = 1 / bpms;
 
     const changeInputColor = (function changeInputColor() { // changes input color based on range value
 
@@ -119,9 +125,6 @@ const Metronome = (function Metronome() {
         // Ans / 1000ms                               how many beats per second
         // 1 / Ans                                    1 beat per x miliseconds
 
-        let bpm = UIMetronome.Tempo.currentTempo / 60;
-        let bpms = bpm / 1000;
-        let duration = 1 / bpms;
 
         const _playSound = function _playSound() {
             const playDiv = getElemById('output__play');
@@ -139,6 +142,12 @@ const Metronome = (function Metronome() {
                     audio.play();
                     soundOnOff();
 
+                    console.log(UIMetronome.Tempo.currentTempo)
+                    
+                    console.log(bpm)
+
+                    console.log(duration)
+
                     if( soundPlaying === false ) complete();
                 }
 
@@ -148,7 +157,7 @@ const Metronome = (function Metronome() {
                     })
                 }
 
-                let timer = setInterval(sound, 100);
+                let timer = setInterval(sound, duration);
 
                 function complete() {
                     clearInterval(timer);
