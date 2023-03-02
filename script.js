@@ -148,17 +148,23 @@ const Metronome = (function Metronome() {
     const setBeatSound = (function setBeatSound() {
         const _playSound = function _playSound( elem, event ) {
             elem.addEventListener( event, () => {
-                let audio = getElemById('audio');
-                // console.log(audio);
-                audio.currentTime = 0; // allows audio to repeat without finishing
-                audio.play()
+
 
                 function soundOn() {
-
+                    let audio = getElemById('audio');
+                    // console.log(audio);
+                    audio.currentTime = 0; // allows audio to repeat without finishing
+                    audio.play()
                 }
 
-                function stopSound() {
+                function startSound() {
                     
+                }
+
+                let timer = setInterval( soundOn, UIMetronome.Tempo.duration );
+
+                function stopSound() {
+
                 }
             })
         }
