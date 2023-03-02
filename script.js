@@ -40,10 +40,10 @@ const UIMetronome = (function UIMetronome() {
         Tempo.bpms = Tempo.bpm / 1000;
         Tempo.duration = 1 / Tempo.bpms;
 
-        console.log(Tempo.currentTempo )
-        console.log(Tempo.bpm)
-        console.log(Tempo.bpms)
-        console.log(Tempo.duration)
+        // console.log(Tempo.currentTempo )
+        // console.log(Tempo.bpm)
+        // console.log(Tempo.bpms)
+        // console.log(Tempo.duration)
     }
 
     const inputRange = (function inputRange() { // sets tempo based on input range.value
@@ -112,7 +112,6 @@ const Metronome = (function Metronome() {
     const plusDiv = getElemById('input__plus');
     const minusDiv = getElemById('input__minus');
     const playDiv = getElemById('output__play');
-
     let soundPlaying = false;
 
     // const changeInputColor = (function changeInputColor() { // changes input color based on range value
@@ -147,12 +146,21 @@ const Metronome = (function Metronome() {
     })();
 
     const setBeatSound = (function setBeatSound() {
-        const _playSound = function _playSound() {
+        const _playSound = function _playSound( elem, event ) {
+            elem.addEventListener( event, () => {
+                let audio = getElemById('audio');
+                // console.log(audio);
+                audio.currentTime = 0; // allows audio to repeat without finishing
+                audio.play()
 
-            let audio = getElemById('audio');
-            // console.log(audio);
-            audio.currentTime = 0; // allows audio to repeat without finishing
-            // audio.play()
+                function soundOn() {
+
+                }
+
+                function stopSound() {
+                    
+                }
+            })
         }
 
         // const _playSound = function _playSound() {
@@ -199,7 +207,10 @@ const Metronome = (function Metronome() {
         // }
 
         const init = function init() {
-            _playSound();
+            _playSound( range, 'input' );
+            _playSound( playDiv, 'click' );
+            _playSound( plusDiv, 'clck' );
+            _playSound( minusDiv, 'click' );
         };
 
         return {
