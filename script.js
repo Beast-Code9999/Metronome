@@ -162,11 +162,13 @@ const Metronome = (function Metronome() {
                 }
 
                 function startSound() {
+                    clearInterval(timer);
+                    timer = null;
                     timer = setInterval( soundOn, UIMetronome.Tempo.duration );
                 }
 
                 startSound();
-
+                console.log(timer)
 
                 function clearSound() {
 
